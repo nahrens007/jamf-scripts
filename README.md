@@ -5,7 +5,7 @@ Repository for scripts used in Ashland University's Jamf environment.
 Scripts to help with keeping 3rd Party Tools up to date. 
 They require autopkg to be installed https://github.com/autopkg/autopkg
 
-The "prepper" scripts require that you donwload some DMG files manually as they are not available through autopkg. 
+The "prepper" scripts require that you download some DMG files manually as they are not available through autopkg. 
 
 # Download Jamf Scripts
 This script will download all the scripts and extension attributes in the Jamf environment and place them in a folder that has the current date. 
