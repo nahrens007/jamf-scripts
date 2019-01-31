@@ -39,3 +39,15 @@ The sole purpose of this app is to add to the scope or exclusion, it will not re
 * As with the "Download Jamf Scripts" application, the Jamf username, password, and URL must be an environment variable. 
 ## Running
 To run the application, simply open Terminal/Command Prompt/Powershell and enter 'python main.py' (you may need to replace python with python3 if you recieve errors unexpectedly). 
+
+# Computers in Jamf
+This script provides various options for checking JSS to see if a computer is in Jamf by serial number.
+It can check an entire list of serials from a file, or one at a time through the command line
+or through an interactive mode.
+
+## Requirements
+* Requires "requests" to be installed ('pip3 install requests')
+* Requires that the following values are in the user's environment variables:
+JSS_USER=[jamf username]
+JSS_PASSWORD=[jamf password] - encode it using base64.b64encode("password")
+JSS_URL = "https://yourcompany.jamfcloud.com"
