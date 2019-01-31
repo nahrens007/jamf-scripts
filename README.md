@@ -26,6 +26,13 @@ If everything runs as expected, a new folder with the current date will be creat
 
 # Bulk Mobile App Scoping
 This application will allow one to easily bulk-scope mobile applications in Jamf. 
+
+This application will not tell you what the current scope arrangements are on applications, nor will this application remove a scope. 
+
+This application has the ability to add device groups or devices to the scope, or add device groups or devices to the exclusion scope. 
+
+The sole purpose of this app is to add to the scope or exclusion, it will not remove currently set scopes. 
+
 ## Requirements
 * Python3
 * Requests library for Python3 (install using 'pip3 install requests')
