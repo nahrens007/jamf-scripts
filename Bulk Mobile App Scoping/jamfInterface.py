@@ -206,6 +206,7 @@ def applyScopeToApp(scope, app_id):
 
     return response.status_code
 
+# main() prints out all the scopes of all the applications.
 def main():
 
     apps = getMobileApps()
@@ -263,7 +264,4 @@ def main():
             print("\t\tNetwork Segment: " + networkSegment['name'])
 
 if __name__ == "__main__":
-    #main()
-    #print(getMobileApps())
-    #print(getMobileGroups())
-    print(getMobileDevices())
+    main()
