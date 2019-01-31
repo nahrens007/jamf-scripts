@@ -18,3 +18,11 @@ JSS_PASSWORD=[jamf password] - encode it using base64.b64encode("password")
 
 JSS_URL = "https://yourcompany.jamfcloud.com"
 
+# Bulk Mobile App Scoping
+This application will allow one to easily bulk-scope mobile applications in Jamf. 
+## Requirements
+* Python3
+* Requests library for Python3 (install using 'pip3 install requests')
+* As with the "Download Jamf Scripts" application, the Jamf username, password, and URL must be an environment variable. 
+## Running
+To run the application, simply open Terminal/Command Prompt/Powershell and enter 'python main.py' (you may need to replace python with python3 if you recieve errors unexpectedly). 
