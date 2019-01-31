@@ -14,11 +14,9 @@ This script will download all the scripts and extension attributes in the Jamf e
 * Requests library for Python3 (install using 'pip3 install requests')
 * The Jamf URL, username, and password must be set as an environment variable (user or system level):
 
-JSS_USER=[jamf username]
-
-JSS_PASSWORD=[jamf password] - encode it using base64.b64encode("password")
-
-JSS_URL = "https://yourcompany.jamfcloud.com"
+- JSS_USER=[jamf username]
+- JSS_PASSWORD=[jamf password] - encode it using base64.b64encode("password")
+- JSS_URL = "https://yourcompany.jamfcloud.com"
 ## Running
 To run the application, simply open Terminal/Command Prompt/Powershell and enter 'python download_scripts.py' (you may need to replace python with python3 if you recieve errors unexpectedly). 
 
@@ -48,6 +46,6 @@ or through an interactive mode.
 ## Requirements
 * Requires "requests" to be installed ('pip3 install requests')
 * Requires that the following values are in the user's environment variables:
-JSS_USER=[jamf username]
-JSS_PASSWORD=[jamf password] - encode it using base64.b64encode("password")
-JSS_URL = "https://yourcompany.jamfcloud.com"
+- JSS_USER=[jamf username]
+- JSS_PASSWORD=[jamf password] - encode it using base64.b64encode("password")
+- JSS_URL = "https://yourcompany.jamfcloud.com"
