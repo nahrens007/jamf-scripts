@@ -66,6 +66,8 @@ or through an interactive mode.
 - JSS_URL = "https://yourcompany.jamfcloud.com"
 
 ## Running
+The below is the help message for the script. 
+```
 usage:      computersInJamf.py -h
 usage:      computersInJamf.py -f <infile>
 usage:      computersInJamf.py -i
@@ -81,3 +83,4 @@ computersInJamf.py -i
     Starts interactive mode, useful for checking one serial number at a time.
 computersInJamf.py -c XYZ1234
     Checks a serial number to see if it's in Jamf.
+```
