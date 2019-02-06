@@ -64,3 +64,20 @@ or through an interactive mode.
 - JSS_USER=[jamf username]
 - JSS_PASSWORD=[jamf password] - encode it using base64.b64encode("password")
 - JSS_URL = "https://yourcompany.jamfcloud.com"
+
+## Running
+usage:      computersInJamf.py -h
+usage:      computersInJamf.py -f <infile>
+usage:      computersInJamf.py -i
+usage:      computersInJamf.py -c <serial>
+
+Description:
+computersInJamf.py -h
+    Prints this help message.
+computersInJamf.py -f serials.txt
+    Takes a file as input, parses through a list of serials from the file
+    (one serial number on each line), and ouputs list of serials in Jamf or not in Jamf.
+computersInJamf.py -i
+    Starts interactive mode, useful for checking one serial number at a time.
+computersInJamf.py -c XYZ1234
+    Checks a serial number to see if it's in Jamf.
