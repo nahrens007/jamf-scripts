@@ -6,6 +6,10 @@ import json
 jamfapps = jamfInterface.getMobileApps()
 devices = jamfInterface.getMobileDevices()
 devicegroups = jamfInterface.getMobileGroups()
+# newscopes is what we use in the "Apply" button
+# so that we are only pushing scopes to apps that have
+# actually been changed, rather than updating apps that haven't been changed.
+newscopes = {}
 
 class ScrollableFrame(Frame):
     def __init__(self, master, height=350, width=225, **kwargs):
@@ -153,6 +157,8 @@ def exclude_group(*args):
             for group in selectedGroups:
                 if group['checked'] == 1:
                     app['scope']['exclusions']['mobile_device_groups'].append({"id":group['id']})
+            # Ensure that the new scope is what is used when we update the JSS app definition.
+            newscopes[app['id']] = app['scope']
         cancel()
 
     ttk.Button(btnFrame, text="Exclude Group", command=exclude).grid(column=0, row=0, sticky=W)
@@ -204,6 +210,8 @@ def exclude_device(*args):
             for dev in selectedDevices:
                 if dev['checked'] == 1:
                     app['scope']['exclusions']['mobile_devices'].append({"id":dev['id']})
+            # Ensure that the new scope is what is used when we update the JSS app definition.
+            newscopes[app['id']] = app['scope']
         # Close the window
         cancel()
 
@@ -218,7 +226,7 @@ def exclude_device(*args):
     pop.mainloop()
 
 def cancel(*args):
-    
+
     root.destroy()
 
 def add_group(*args):
@@ -258,6 +266,8 @@ def add_group(*args):
             for group in selectedGroups:
                 if group['checked'] == 1:
                     app['scope']['mobile_device_groups'].append({"id":group['id']})
+            # Ensure that the new scope is what is used when we update the JSS app definition.
+            newscopes[app['id']] = app['scope']
         #close window
         cancel()
 
@@ -310,6 +320,8 @@ def add_device(*args):
             for dev in selectedDevices:
                 if dev['checked'] == 1:
                     app['scope']['mobile_devices'].append({"id":dev['id']})
+            # Ensure that the new scope is what is used when we update the JSS app definition.
+            newscopes[app['id']] = app['scope']
         # Close the window
         cancel()
 
@@ -324,20 +336,25 @@ def add_device(*args):
     pop.mainloop()
 
 def apply(*args):
+    global newscopes
     # disable the buttons so they aren't pressed while updating.
     disableButtons()
-    for app in jamfapps:
-        status.set("Applying scope to " + app['display_name'])
-        status_code = jamfInterface.applyScopeToApp(app['scope'], app['id'])
+    for app in newscopes:
+        status.set("Applying scope to app id: " + str(app))
+        status_code = jamfInterface.applyScopeToApp(newscopes[app], app)
         if status_code == 201:
             status.set("Success!")
         else:
             status.set("Fail. Error code: " + str(status_code))
+        print(app)
+        print(newscopes[app])
+        print()
+    newscopes = {}
     # Re-enable the buttons
     enableButtons()
 
 def refresh():
-    global jamfapps, devices, devicegroups
+    global jamfapps, devices, devicegroups, newscopes
 
     # disable the buttons so they aren't pressed while updating.
     disableButtons()
@@ -350,6 +367,8 @@ def refresh():
     devicegroups = jamfInterface.getMobileGroups()
     status.set("")
 
+    newscopes = {}
+    
     # Re-enable the buttons
     enableButtons()
 
