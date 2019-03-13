@@ -24,7 +24,6 @@ https://developer.jamf.com/apis/classic-api/index
 import requests
 import json
 import base64
-import keys
 import os
 import datetime
 
