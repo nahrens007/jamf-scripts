@@ -37,7 +37,7 @@
       <br>
       <label>Select by category:</label>
       <select id="catsel" name="selcat" onchange="categorySelect()">
-        <option value="None">None</option>
+        <option value="No category assigned">No category assigned</option>
         {% for cat in categories %}
         <option value="{{ cat.name }}">{{ cat.name }}</option>
         {% endfor %}
