@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+{% block title %}App Management{% endblock %}
+
+{% block main_content %}
+<div class="col-sm-2 sidenav text-left">
+</div>
+
+<div class="col-sm-8 text-left">
+  <div id="apps">
+    <div class="text-center">
+      <h1>App Management</h1>
+    </div>
+    <div>
+      <div class="panel panel-default">
+        <div class="panel-heading">Description</div>
+        <div class="panel-body">
+          <p>Clicking "Update" will download everything required from the Jamf server to make this app work, specifically the following.</p>
+          <ul>
+            <li>App Definitions</li>
+            <li>Mobile Devices</li>
+            <li>Mobile Device Groups</li>
+          </ul>
+          <p>This process could take a few minutes...</p>
+        </div>
+      </div>
+    </div>
+    <form name="menu" method="post">
+      <input type="submit" formaction="/update" name="action" value="Update" class="btn btn-default" />
+    </form>
+  </div>
+</div>
+
+<div class="col-sm-2 sidenav text-left">
+</div>
+{% endblock %}

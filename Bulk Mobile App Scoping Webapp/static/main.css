@@ -1,0 +1,8 @@
+table {
+  margin-top: 15px;
+}
+
+input[type="submit"] {
+  border-radius: 15px;
+  margin-right: 8px;
+}
