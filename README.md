@@ -49,6 +49,7 @@ The sole purpose of this app is to add to the scope or exclusion, it will not re
 ## Requirements
 * Python3
 * Requests library for Python3 (install using 'pip3 install requests')
+* Flask library for Python3 (install using 'pip3 install flask')
 * As with the "Download Jamf Scripts" application, the Jamf username, password, and URL must be an environment variable. 
 ## Running
 To run the application, simply open Terminal/Command Prompt/Powershell and enter 'python main.py' (you may need to replace python with python3 if you recieve errors unexpectedly). 
