@@ -46,7 +46,7 @@ This application has the ability to add device groups or devices to the scope, o
 
 The sole purpose of this app is to add to the scope or exclusion, it will not remove currently set scopes. 
 
-![alt text](https://github.com/[username]/[reponame]/[reponame]/blob/[branch]/Bulk%20Mobile%20App%20Scoping/image.png?raw=true)
+![App Index Screen](Bulk%20Mobile%20App%20Scoping/image.png?raw=true)
 
 ## Requirements
 * Python3
